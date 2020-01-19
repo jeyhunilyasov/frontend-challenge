@@ -1,0 +1,149 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: .5rem;
+    background: #000;
+    box-shadow: 1px 0 7px 0 #636363;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header>div {
+    flex: 1;
+}
+
+header>input {
+    flex: 2;
+}
+
+header .logo img {
+    height: 30px;
+}
+
+header .search {
+    width: 300px;
+    height: 2rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    outline: none;
+    padding-left: 1rem;
+    border: none;
+}
+
+header .filters {
+    display: flex;
+    justify-content: space-around;
+}
+
+header .filters .production {
+    border-radius: 4px;
+    border: 0;
+    outline: 0;
+    font-size: 1.2rem;
+}
+
+header .filters .sort {
+    display: flex;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
+header .filters .sort img {
+    width: 2rem;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 1px;
+    transition: transform .25s ease-out;
+}
+
+header .filters .sort img:hover {
+    background-color: #cecece;
+}
+
+header .filters .sort.sort--active img {
+    border: 2px solid blue;
+}
+
+header .filters .sort.sort--descending img {
+    transform: rotate(180deg);
+}
+
+.cars-list {
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cars-list-item {
+   margin: 1rem;
+   box-shadow: 0 0 20px 1px grey;
+   cursor: pointer;
+}
+
+.cars-list-item:hover {
+    background-color: #e5e5e5;
+}
+
+.cars-list-item__image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.cars-list-item__image img {
+    width: 100%;
+    height: 100%;
+    transition: transform .2s;
+}
+
+.cars-list-item:hover .cars-list-item__image img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.cars-list-item__content {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.cars-list-item__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cars-list-item__title__production {
+    color: grey;
+}
+
+.cars-list-item__description {
+    text-align: justify;
+}
+
+@media screen and (max-width: 950px) {
+    .cars-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cars-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header>input {
+        flex: 1;
+    }
+}
