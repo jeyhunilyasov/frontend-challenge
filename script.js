@@ -128,7 +128,7 @@ const searchAndSort = {
     const filter = document.querySelector('.production').value;
     const cars = carsAPI.getCars();
     const searchedCars = cars.filter( ele => {
-      return ele.title.indexOf(text) != -1;
+      return ele.title.toLowerCase().indexOf(text.toLowerCase()) != -1;
     })
     var fliteredCars = searchedCars.filter(ele => {
       var firstYear = ele.production.substring(0, 4);
